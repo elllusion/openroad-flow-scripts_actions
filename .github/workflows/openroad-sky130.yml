@@ -8,12 +8,21 @@ on:
 jobs:
   openroad:
     runs-on: ubuntu-22.04
-    container:
-      image: openroad/flow-ubuntu22.04-builder:latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+
+      - name: Download and install OpenROAD .deb
+        run: |
+          wget https://github.com/The-OpenROAD-Project/OpenROAD/releases/download/v2.0-2024.09.30/OpenROAD-ubuntu20_04-x64.deb -O openroad.deb
+          sudo apt-get install -y ./openroad.deb
+          openroad -version
 
       - name: Clone OpenROAD-flow-scripts
         run: |
