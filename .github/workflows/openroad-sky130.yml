@@ -8,31 +8,16 @@ on:
 jobs:
   openroad:
     runs-on: ubuntu-22.04
+    container:
+      image: theopenroad/openroad:latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            cmake \
-            swig \
-            tcl-dev \
-            libboost-all-dev \
-            libeigen3-dev \
-            flex bison \
-            libspdlog-dev \
-            libgtest-dev \
-            python3 python3-pip
-          pip3 install wheel ninja
-
       - name: Clone OpenROAD-flow-scripts
         run: |
           git clone --depth=1 https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
-          cd OpenROAD-flow-scripts
-          ./build_openroad.sh
 
       - name: Copy user design
         run: |
