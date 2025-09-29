@@ -20,7 +20,7 @@ jobs:
 
       - name: Download and install OpenROAD .deb
         run: |
-          wget https://github.com/The-OpenROAD-Project/OpenROAD/releases/download/v2.0-2024.09.30/OpenROAD-ubuntu20_04-x64.deb -O openroad.deb
+          wget https://github.com/Precision-Innovations/OpenROAD/releases/download/2024-12-14/openroad_2.0-17598-ga008522d8_amd64-ubuntu-22.04.deb -O openroad.deb
           sudo apt-get install -y ./openroad.deb
           openroad -version
 
