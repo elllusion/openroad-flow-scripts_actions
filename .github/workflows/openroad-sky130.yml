@@ -31,7 +31,7 @@ jobs:
 
       - name: Run OpenROAD Flow
         run: |
-          pip install yaml
+          pip3 install pyyaml
           cd OpenROAD-flow-scripts/flow
           make DESIGN_CONFIG=./designs/sky130hd/cm0ikmcu/config.mk
 
