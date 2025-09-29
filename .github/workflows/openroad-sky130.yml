@@ -32,7 +32,8 @@ jobs:
         run: |
           git clone --depth=1 https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
           cd OpenROAD-flow-scripts
-          ./build_openroad.sh> build.log 2>&1 || (cat build.log && exit 1)
+          ./setup.sh > setup.log 2>&1 || (cat setup.log && exit 1)
+          ./build_openroad.sh --local --threads 16 > build.log 2>&1 || (cat build.log && exit 1)
 
       - name: Copy user design
         run: |
