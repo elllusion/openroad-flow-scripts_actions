@@ -7,9 +7,7 @@ on:
 
 jobs:
   openroad:
-    runs-on: ubuntu-22.04
-    container:
-      image: appaapps/openroad:latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
@@ -21,7 +19,6 @@ jobs:
           apt-get install -y \
           cmake \
           swig \
-          yosys \
           tcl-dev \
           libboost-all-dev \
           libeigen3-dev \
