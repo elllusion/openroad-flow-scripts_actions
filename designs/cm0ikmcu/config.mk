@@ -9,7 +9,7 @@ export VERILOG_INCLUDE_DIRS = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/core \
 export SDC_FILE      = $(DESIGN_HOME)/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
 export CORE_UTILIZATION = 1000
-export SYNTH_MEMORY_MAX_BITS = 1000000
+export SYNTH_MEMORY_MAX_BITS = 16000000
 export ADDITIONAL_LEFS = $(DESIGN_HOME)/../platforms/sky130ram/sky130_sram_1rw1r_64x256_8/sky130_sram_1rw1r_64x256_8.lef
 export ADDITIONAL_LIBS = $(DESIGN_HOME)/../platforms/sky130ram/sky130_sram_1rw1r_64x256_8/sky130_sram_1rw1r_64x256_8_TT_1p8V_25C.lib
 export PLACE_DENSITY_LB_ADDON = 0.2
