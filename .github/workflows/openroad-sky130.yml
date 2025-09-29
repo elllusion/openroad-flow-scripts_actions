@@ -28,6 +28,16 @@ jobs:
           python3 python3-pip \
           time
 
+      - name: Extract prebuilt OpenROAD
+        run: |
+          mkdir -p $HOME/openroad
+          tar -xzf tools/openroad.tar.gz -C $HOME/openroad
+          echo "$HOME/openroad/bin" >> $GITHUB_PATH
+
+      - name: Verify OpenROAD
+        run: |
+          openroad -version
+
       - name: Clone OpenROAD-flow-scripts
         run: |
           git clone --depth=1 https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
