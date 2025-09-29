@@ -9,7 +9,7 @@ jobs:
   openroad:
     runs-on: ubuntu-22.04
     container:
-      image: openroad/flow-ubuntu22.04-dev:latest
+      image: openroad/flow-runtime:latest
 
     steps:
       - name: Checkout repository
