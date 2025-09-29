@@ -1,4 +1,4 @@
-name: OpenROAD Flow For SKY130
+name: OpenROAD Flow For asap7
 
 on:
   push:
@@ -45,23 +45,23 @@ jobs:
           mkdir -p OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/core
           mkdir -p OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/dap
           mkdir -p OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/ualdis
-          mkdir -p OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu
+          mkdir -p OpenROAD-flow-scripts/flow/designs/asap7/cm0ikmcu
           cp -r designs/cm0ikmcu/src/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/
           cp -r designs/cm0ikmcu/src/core/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/core
           cp -r designs/cm0ikmcu/src/dap/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/dap
           cp -r designs/cm0ikmcu/src/ualdis/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/ualdis
-          cp designs/cm0ikmcu/rules-base.json OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
-          cp designs/cm0ikmcu/config.mk OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
-          cp designs/cm0ikmcu/constraint.sdc OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
+          cp designs/cm0ikmcu/rules-base.json OpenROAD-flow-scripts/flow/designs/asap7/cm0ikmcu/
+          cp designs/cm0ikmcu/config.mk OpenROAD-flow-scripts/flow/designs/asap7/cm0ikmcu/
+          cp designs/cm0ikmcu/constraint.sdc OpenROAD-flow-scripts/flow/designs/asap7/cm0ikmcu/
           
       - name: Run OpenROAD Flow
         run: |
           pip3 install pyyaml
           cd OpenROAD-flow-scripts/flow
-          make DESIGN_CONFIG=./designs/sky130hd/cm0ikmcu/config.mk
+          make DESIGN_CONFIG=./designs/asap7/cm0ikmcu/config.mk
 
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
           name: openroad-results
-          path: OpenROAD-flow-scripts/flow/results/sky130hd/cm0ikmcu
+          path: OpenROAD-flow-scripts/flow/results/asap7/cm0ikmcu
