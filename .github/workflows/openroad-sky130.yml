@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -p OpenROAD-flow-scripts/tools/install
           tar -xf install.tar.xz -C OpenROAD-flow-scripts/tools/install
-          ls OpenROAD-flow-scripts/tools/install
+          ldd OpenROAD-flow-scripts/tools/install/yosys/bin/yosys-abc
 
       - name: Copy user design
         run: |
@@ -50,7 +50,6 @@ jobs:
           cp -r designs/cm0ikmcu/src/core/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/core
           cp -r designs/cm0ikmcu/src/dap/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/dap
           cp -r designs/cm0ikmcu/src/ualdis/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/ualdis
-          ls OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/
           cp designs/cm0ikmcu/rules-base.json OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
           cp designs/cm0ikmcu/config.mk OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
           cp designs/cm0ikmcu/constraint.sdc OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
