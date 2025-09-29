@@ -1,5 +1,5 @@
 export DESIGN_NICKNAME = cm0ikmcu
-export DESIGN_NAME = CM0IKMCU
+export DESIGN_NAME = CORTEXM0
 export PLATFORM    = sky130hd
 
 export VERILOG_FILES = $(sort $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/core/*.v) $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/dap/*.v) $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/*.v))
