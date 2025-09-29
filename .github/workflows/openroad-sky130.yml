@@ -21,6 +21,7 @@ jobs:
           apt-get install -y \
           cmake \
           swig \
+          yosys \
           tcl-dev \
           libboost-all-dev \
           libeigen3-dev \
@@ -55,7 +56,7 @@ jobs:
         run: |
           pip3 install pyyaml
           export OPENROAD_EXE=/usr/bin/openroad
-          export YOSYS_EXE=/root/oss-cad-suite/bin/yosys
+          export YOSYS_EXE=/usr/bin/yosys
           cd OpenROAD-flow-scripts/flow
           make DESIGN_CONFIG=./designs/sky130hd/cm0ikmcu/config.mk
 
