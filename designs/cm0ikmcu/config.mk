@@ -2,9 +2,7 @@ export DESIGN_NICKNAME = cm0ikmcu
 export DESIGN_NAME = CM0IKMCU
 export PLATFORM    = sky130hd
 
-export VERILOG_FILES = $(sort $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/core/*.v)) \
-								$(sort $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/dap/*.v)) \
-								$(sort $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/*.v))
+export VERILOG_FILES = $(sort $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/core/*.v) $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/dap/*.v) $(wildcard $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/*.v))
 export VERILOG_INCLUDE_DIRS = $(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/core \
 								$(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/dap \
 								$(DESIGN_HOME)/src/$(DESIGN_NICKNAME)/ualdis
