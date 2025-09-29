@@ -40,6 +40,7 @@ jobs:
           mkdir -p OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu
           mkdir -p OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu
           cp -r designs/cm0ikmcu/src/*.v OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/
+          ls OpenROAD-flow-scripts/flow/designs/src/cm0ikmcu/
           cp designs/cm0ikmcu/rules-base.json OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
           cp designs/cm0ikmcu/config.mk OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
           cp designs/cm0ikmcu/constraint.sdc OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
