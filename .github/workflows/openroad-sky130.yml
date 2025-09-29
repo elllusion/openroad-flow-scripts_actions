@@ -58,8 +58,6 @@ jobs:
       - name: Run OpenROAD Flow
         run: |
           pip3 install pyyaml
-          export OPENROAD_EXE=/usr/bin/openroad
-          export YOSYS_EXE=/usr/bin/yosys
           cd OpenROAD-flow-scripts/flow
           make DESIGN_CONFIG=./designs/sky130hd/cm0ikmcu/config.mk
 
