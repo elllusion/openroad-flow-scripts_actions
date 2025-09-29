@@ -51,6 +51,14 @@ jobs:
           cp designs/cm0ikmcu/config.mk OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
           cp designs/cm0ikmcu/constraint.sdc OpenROAD-flow-scripts/flow/designs/sky130hd/cm0ikmcu/
 
+      - name: Setup swap space
+        run: |
+          sudo fallocate -l 16G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          free -h
+          
       - name: Run OpenROAD Flow
         run: |
           pip3 install pyyaml
