@@ -53,10 +53,10 @@ jobs:
 
       - name: Setup swap space
         run: |
-          sudo fallocate -l 16G /swapfile
-          sudo chmod 600 /swapfile
-          sudo mkswap /swapfile
-          sudo swapon /swapfile
+          fallocate -l 16G /swapfile
+          chmod 600 /swapfile
+          mkswap /swapfile
+          swapon /swapfile
           free -h
           
       - name: Run OpenROAD Flow
