@@ -37,6 +37,7 @@ jobs:
         run: |
           mkdir -p OpenROAD-flow-scripts/tools/install
           tar -xf install.tar.xz -C OpenROAD-flow-scripts/tools/install
+          ls OpenROAD-flow-scripts/tools/install
 
       - name: Copy user design
         run: |
