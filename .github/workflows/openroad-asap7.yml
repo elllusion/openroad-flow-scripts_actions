@@ -33,6 +33,7 @@ jobs:
         run: |
           git clone --depth=1 https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts.git
           cd OpenROAD-flow-scripts
+          sudo ./etc/DependencyInstaller.sh -base && sudo ./etc/DependencyInstaller.sh -common
 
       - name: Use prebuilt OpenROAD install
         run: |
